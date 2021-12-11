@@ -6,6 +6,7 @@
   --primary-bg-color: #ffffff;
   --second-bg-color: #f5f4fa;
   --third-bg-color: #2f303a;
+  --linc-fill-color: #afb1b8;
 }
 
 body {
@@ -50,7 +51,6 @@ body {
   font-style: inherit;
 }
 
-/* -------- Шапка початок ------- */
 /* Логотип */
 
 .logo {
@@ -70,27 +70,6 @@ body {
 }
 
 /* Навігація */
-
-.nav-tab {
-  color: var(--tittle-text-color);
-}
-.nav-tab,
-.nav-auth {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-
-.nav-tab:hover,
-.nav-auth:hover,
-.nav-tab:focus,
-.nav-auth:focus,
-.nav-tab.current {
-  color: var(--acsent-color);
-}
-
-/* Компонування навігації */
 .header {
   display: flex;
   flex-basis: 100%;
@@ -111,6 +90,32 @@ body {
   margin-left: 93px;
 }
 
+.nav-tab {
+  color: var(--tittle-text-color);
+}
+
+.nav-tab,
+.nav-auth {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.nav-tab:hover,
+.nav-auth:hover,
+.nav-tab:focus,
+.nav-auth:focus,
+.nav-tab.current {
+  color: var(--acsent-color);
+  fill: var(--acsent-color);
+}
+
 .auth-nav {
   display: flex;
   margin-left: auto;
@@ -121,24 +126,25 @@ body {
   margin-left: 50px;
 }
 
-.nav-tab,
-.nav-auth {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+.auth-icon-box {
+  margin-right: 10px;
 }
-
-/* ------- Шаппка кінець ------ */
 
 /* Герой */
 .hero {
-  background-color: var(--third-bg-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero-bgi.jpg');
+  background-color: #c4c4c4;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
 }
 
 .hero-container {
-  height: 600px;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  text-align: center;
 }
 
 .hero-title {
@@ -154,15 +160,12 @@ body {
 }
 
 .hero-button {
-  display: block;
   width: 200px;
   height: 50px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   margin-top: 30px;
-  margin-right: auto;
-  margin-left: auto;
 
   color: var(--second-acsent-color);
   font-family: inherit;
@@ -213,6 +216,20 @@ body {
 
 .feature-list-item:not(:first-child) {
   margin-left: 30px;
+}
+
+.feature-icon-wrapper {
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: var(--second-bg-color);
+}
+
+.feature-icon-box {
+  width: 70px;
+  height: 70px;
 }
 
 .feature-list-title {
@@ -283,13 +300,98 @@ body {
   line-height: 1.19;
 }
 
-/* footer */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.social-link-item {
+  width: 44px;
+  height: 44px;
+}
+
+.social-link-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  fill: var(--linc-fill-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  fill: var(--second-acsent-color);
+  background-color: var(--acsent-color);
+}
+
+.icon-box-social {
+  width: 20px;
+  height: 20px;
+}
+
+/* Постійні клієнти */
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.client:not(:last-child) {
+  margin-right: 30px;
+}
+
+.client-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--linc-fill-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+
+  fill: var(--linc-fill-color);
+}
+
+.client-link:hover,
+.client-link:focus {
+  border: 1px solid var(--acsent-color);
+  fill: var(--acsent-color);
+}
+
+.icon-client-box {
+  width: 106px;
+  height: 60px;
+}
+
+/* Підвал */
+
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
   color: var(--second-acsent-color);
 
   background-color: var(--third-bg-color);
+}
+
+.footer-containers {
+  display: flex;
+  align-items: center;
+}
+
+.footer-address {
+  width: 231px;
+  margin-right: 70px;
 }
 
 .address {
@@ -302,6 +404,20 @@ body {
 
 .footer-auth {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.title-linc {
+  margin-top: 0;
+
+  color: var(--second-acsent-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.social-link-footer {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ===============  Портфоліо ============= */
